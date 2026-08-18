@@ -1,0 +1,54 @@
+# Book-level settings. Layout and per-language typography.
+# Story text lives in text/<lang>.yaml. Art direction lives in style.yaml.
+# Page structure and scene descriptions live in pages.yaml.
+
+author: ""            # printed as a small header on interior pages if set
+
+default_language: en
+
+# One block per language. `python3 build.py --lang ru` builds the Russian
+# edition from the same art and the same layout code.
+#
+# Font must cover the script: CenturySchoolbook, Bookman and Palatino are
+# Latin-only. Lora and Caladea carry Cyrillic. Russian also runs ~15% longer
+# than English, which is why its body size is a half point smaller.
+languages:
+  en:
+    font: CenturySchoolbook
+    title_size: 29
+    body_size: 13
+    leading: 20.5
+    output: "Good night, Orea.pdf"
+  ru:
+    font: Lora
+    title_size: 26
+    body_size: 12.5
+    leading: 20
+    output: "Спокойной ночи, Орея.pdf"
+
+# fit_width = illustration spans the full width of its half of the spread.
+# Nothing is cropped left or right; leftover space falls only at top and
+# bottom. Other options: fill (edge to edge, crops, needs crop_anchor)
+# and fit (border on all four sides).
+image_mode: fit_width
+
+page:
+  size: [792, 612]      # landscape spread, points (11 x 8.5 in @72dpi)
+  margin_text: 68
+  margin_right: 54
+  paper: "#FBFAF7"
+  ink: "#2B2B2B"
+  faint: "#8A8A8A"
+
+cover:
+  image: page_00.png
+  # crop_anchor only applies in fill mode; fit_width crops nothing sideways
+
+tint:
+  enabled: true
+  mode: per_page        # per_page = each spread continues its own art's colour
+                        # uniform  = one averaged colour for the whole book
+  lift: 0.86            # 0 = full illustration colour, 1 = pure paper colour
+  sample_edge: 0.72     # sample this fraction across the image, nearest the fold
+  luminance_floor: 0.80 # never let a dark page drag its text panel below this
+  # fixed: "#EDEBE6"    # pin an exact colour and ignore sampling

@@ -1,0 +1,30 @@
+author: ""
+default_language: en
+
+languages:
+  en:
+    font: CenturySchoolbook   # Latin only; use Lora for Cyrillic
+    title_size: 29
+    body_size: 13
+    leading: 20.5
+    output: "book.pdf"
+
+image_mode: fit_width
+
+page:
+  size: [792, 612]
+  margin_text: 68
+  margin_right: 54
+  paper: "#FBFAF7"
+  ink: "#2B2B2B"
+  faint: "#8A8A8A"
+
+cover:
+  image: page_00.png
+
+tint:
+  enabled: true
+  mode: per_page
+  lift: 0.86
+  sample_edge: 0.72
+  luminance_floor: 0.80

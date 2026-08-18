@@ -1,0 +1,74 @@
+# STORY WORLD — everything specific to this story. The cast, the places, and the
+# continuity rules that only make sense here.
+#
+# style.yaml holds craft rules and never mentions any of this by name.
+# Swap this file and the same pipeline tells a different story, anywhere.
+
+# --- cast ------------------------------------------------------------------
+# `constant: true` means the character must appear in every illustration.
+# Descriptions feed the character-sheet prompt; the sheet then carries the
+# appearance and the prompts stop having to describe it.
+
+cast:
+  - id: orea
+    name: Orea
+    lead: true
+    description: >
+      A girl of four. Blonde wavy shoulder-length hair, rosy cheeks, blue eyes.
+      She wears pale blue button-up pyjamas, long sleeves, long trousers, plain
+      with no pattern. She is barefoot.
+    sheet_views:
+      - standing, full body, facing forward
+      - standing, full body, in profile facing left
+      - head and shoulders, larger, facing forward
+
+  - id: whoof
+    name: Whoof-Whoof
+    constant: true
+    description: >
+      A soft beige stuffed toy dog with very long floppy ears, a small black
+      nose, a red collar, and a small navy blue bow on the top of his head.
+    sheet_views:
+      - sitting on its own, facing forward
+      - lying on its own, on its side
+    rules:
+      - Whoof-Whoof appears in every illustration. He is never lost, never
+        dropped, never swapped for another toy, never damaged.
+
+# --- settings --------------------------------------------------------------
+# One entry per place the story visits. Each page in pages.yaml names its
+# setting; prompts.py attaches that plate and emits that description.
+# A story in a forest adds a `forest:` block here and nothing else changes.
+
+settings:
+  bedroom:
+    plate: room.png
+    description: >
+      A child's bedroom at night: white walls, a brown wooden door, one window
+      with a cream roll-up blind, a tall white wardrobe, a wooden bookshelf, a
+      lilac table with a matching lilac chair beside the bed, a small brass lamp
+      on the lilac table, plain floorboards, a small round pale rug, and a bed
+      with a plain light blue blanket. A bare tree and a full moon outside the
+      window.
+    constants:
+      - The walls are white, the door brown, the wardrobe white, the table and
+        chair lilac, the blind cream, the blanket plain light blue with no
+        pattern, flowers, patchwork or stripes.
+    never:
+      - No pictures or frames on the walls.
+
+# --- continuity ------------------------------------------------------------
+# Rules that belong to this story only. Delete any that stop applying; a book
+# without shadows simply has no shadows entry.
+
+continuity:
+  shadows: >
+    Shadows are flat, soft-edged and completely featureless. Never draw a face,
+    eyes, a mouth, teeth, claws, fingers or hands in a shadow. A shadow is never
+    a creature and never looks like one.
+
+# --- which image demonstrates the target look ------------------------------
+# Point this at your approved character sheet once you have one; a finished
+# sheet is a stronger style reference than the rough original.
+
+style_reference_image: reference.png

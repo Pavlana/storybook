@@ -1,0 +1,113 @@
+# STYLE — craft rules only. Reusable across every book, in any setting.
+#
+# HARD RULE FOR THIS FILE: no proper nouns, no character names, no furniture,
+# no colours, no room. If you cannot use a sentence in a story set in a forest,
+# it does not belong here — it belongs in world.yaml.
+#
+# prompts.py combines this with world.yaml and pages.yaml. Placeholders in
+# braces are filled from world.yaml at assembly time.
+
+# --- the look -------------------------------------------------------------
+# `pack` selects styles/<pack>/. The pack supplies `style` and `edges`; the
+# values below are only fallbacks used when no pack is set.
+
+pack: watercolour
+
+style: >
+  Traditional watercolour on textured paper with visible paper grain, soft
+  pigment bleed at the edges of each wash, and fine ink linework over the
+  colour. Muted natural colours, gentle realism, warm and calm. Early
+  twentieth-century English picture book tradition. Do not imitate or reference
+  any specific named book, character, illustrator or franchise.
+
+style_reference: >
+  One attached image is a STYLE REFERENCE. Match its medium, its paper texture,
+  its palette, its line quality and its level of detail as closely as you can —
+  the finished picture should look like it came from the same sketchbook, by the
+  same hand, in the same sitting. Do NOT copy its subject, its poses or its
+  composition; take only the look.
+
+edges: >
+  Paint the illustration as a watercolour vignette on a white ground — the wash
+  fades softly and irregularly at all four edges, with no hard rectangular
+  border and no content running to the edge.
+
+aspect: >
+  Portrait format, 3:4 proportion. Use the same proportion on every page of
+  this book.
+
+composition: >
+  Keep every character whole and inside the frame with a margin — no hand, foot,
+  tail, ear or held object may touch or run off the edge of the picture. Leave
+  breathing space at all four edges. One clear focal point per page.
+
+# --- what the attached images are for -------------------------------------
+# {characters} and {setting} are filled from world.yaml.
+
+image_roles:
+  characters: >
+    The character sheet shows {characters}. Copy their appearance from it
+    exactly — faces, proportions, clothing, colours and markings.
+  setting: >
+    The setting plate shows {setting}. Copy the place, its layout, its contents
+    and its colours from it exactly.
+  previous_page: >
+    One attached image is the previous page of this same book. Match its style,
+    its lighting and its colours exactly, so the two pages look like they were
+    painted by the same artist on the same day. Do NOT copy its camera position
+    or framing — use the shot and angle specified below, even if it means
+    moving the camera somewhere the previous page never showed.
+  no_previous: >
+    This is the first illustration in the book. There is no previous page to
+    match; set the look the rest of the book will follow.
+
+# --- universal prohibitions ------------------------------------------------
+# Story-specific bans (no frames on walls, no extra adults) go in world.yaml.
+
+never:
+  - No text, no letters, no words, no numbers anywhere in the image, including
+    on signs, spines and labels.
+  - Do not mention or refer to the attached files or their names.
+  - Draw only the characters named in the scene. Invent no additional people,
+    animals or creatures.
+
+# --- camera vocabulary -----------------------------------------------------
+
+shots:
+  wide: >
+    CAMERA — WIDE SHOT. Show the whole setting. The main character is a small
+    full-length figure within the space. The place is the subject.
+  medium: >
+    CAMERA — MEDIUM SHOT. The main character from roughly the knees or waist up,
+    filling about a third of the frame, with only part of the setting behind.
+    One clear action, close enough to read the face.
+  close: >
+    CAMERA — CLOSE-UP. The main character's head and shoulders fill most of the
+    frame. The expression is the subject. Only a fragment of the setting shows.
+  detail: >
+    CAMERA — DETAIL SHOT. No full figure. Frame tightly on the single object or
+    surface this page is about, filling the frame edge to edge. A character may
+    appear only as a small fragment at the edge, or not at all.
+
+angles:
+  eye_level:     Camera at the child's own eye height, level.
+  low:           Camera low, near the ground, looking up.
+  high:          Camera above, looking gently down.
+  from_behind:   Camera behind the main character; we see their back and what they face.
+  from_doorway:  Camera at the edge of the space, looking in across it.
+  from_pillow:   Camera very low and close, at resting-head height.
+  side:          Camera to one side, viewing the scene in profile.
+  three_quarter: Camera at a three-quarter angle, between front and side.
+
+# --- how a page scene is described ----------------------------------------
+
+scene_fields:
+  - [subject,    SUBJECT]
+  - [action,     ACTION]
+  - [gaze,       GAZE]
+  - [expression, EXPRESSION]
+  - [companion,  COMPANION]
+  - [light,      LIGHT]
+  - [shadow,     SHADOW]
+  - [room,       SETTING VISIBLE]
+  - [state,      STATE]

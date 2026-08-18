@@ -1,0 +1,56 @@
+# English text. Keys are page numbers and must match pages.yaml.
+# To add a language: copy this file, translate the values, add the language
+# to book.yaml's `languages:` block. Nothing else changes.
+
+title: "Good night, Orea."
+
+pages:
+  1: >
+    Orea is a brave girl. She is grown up enough to sleep alone in her own
+    room. Her bed is nice and cosy, and her little beige dog, Whoof-Whoof,
+    sleeps beside her every night. But tonight Orea does not want to go to
+    sleep alone. What happened, Orea?
+
+  2: >
+    Mum comes in to say good night. Orea is in her bed, but she does not want
+    Mummy to go. She is scared of the shadows that come on the walls every
+    night when the lamp goes off. "We all have fears, and that is quite
+    normal," says Mum. "A shadow is only light with something standing in the
+    way. If you are scared, you can turn the lamp on."
+
+  3: >
+    Mum's footsteps go down the stairs. The lamp is off, and the room is grey
+    and quiet. And there it is, on the wall beside the door. Tall and thin,
+    with long arms. It moves a little, and stops, and moves again. Orea pulls
+    her blanket up to her chin. Her heart is going very fast. Oh, Orea.
+
+  4: >
+    Mum and Dad are just downstairs. One call, and they would come. Orea knows
+    that. But tonight there is something Orea wants to find out for herself.
+    "Hold on to me," she says to Whoof-Whoof, and she stretches her hand out
+    into the dark.
+
+  5: >
+    Click. The light comes back, warm and yellow, and the wall is a wall again
+    — white and plain and perfectly ordinary. The tall thin shape has gone.
+    Orea breathes out slowly. "Did you see that, Whoof-Whoof?"
+
+  6: >
+    But Orea is not finished yet. She climbs down from her bed, with
+    Whoof-Whoof under her arm, and she pushes the brown door open. Just a
+    little. Just enough. A thin line of light comes in from the landing and
+    lies down on the floor beside her. There. That is better.
+
+  7: >
+    Now for the brave part. Orea goes back to the lilac table and turns the
+    lamp off. The shape comes back, of course it does. But it is smaller now,
+    and softer, and it does not frighten her the way it did before. Orea looks
+    out of the window. There is the tree, moving its branches in the wind.
+    "Oh," says Orea. "It was you all along."
+
+  8: >
+    Orea climbs into her own bed and pulls up her blanket. The door stands open
+    a little, and the light lies quietly across the floor. Tomorrow night the
+    shape will come again — and Orea will know its name. She holds Whoof-Whoof
+    close, and her eyes go heavy, and the room is quiet. Good night, Orea.
+    Good night, Whoof-Whoof.

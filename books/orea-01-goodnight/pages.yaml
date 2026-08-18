@@ -1,0 +1,177 @@
+# STRUCTURE ONLY — no story text lives here. Text is in text/<lang>.yaml,
+# keyed by the same page numbers. Art direction is in style.yaml.
+#
+# setting — which place from world.yaml this page happens in
+# shot   — how close: wide | medium | close | detail
+# angle  — where from: eye_level | low | high | from_behind | from_doorway |
+#          from_pillow | side | three_quarter
+#
+# RULE: a shot may repeat on consecutive pages, but not from the same angle.
+#
+# scene  — a DESCRIPTION of the picture, never the story. Every field must be
+#          something a painter could see. No thoughts, no memory, no future
+#          tense, no characters who are not in the frame.
+#          Fields and their order are defined in style.yaml -> scene_fields.
+
+pages:
+  - n: 1
+    image: page_01.png
+    setting: bedroom
+    shot: wide
+    angle: eye_level
+    scene:
+      subject: Orea standing centre of frame on the bare floorboards, full
+        length, facing the viewer, feet bare and together
+      action: holding Whoof-Whoof in both arms against her chest
+      gaze: directly at the viewer
+      expression: calm, faintly smiling, untroubled
+      companion: Whoof-Whoof held upright against her front, both his long ears
+        hanging forward, red collar and navy bow visible
+      light: lamp on the lilac table lit at right, warm yellow, spilling across
+        the right wall; cool moonlight through the window behind
+      shadow: none prominent
+      room: brown door ajar far left, window with cream blind and moon centre
+        left, white wardrobe right of the window, bed along the right wall,
+        lilac table and chair far right, round pale rug under her feet
+      state: lamp on, door ajar, night outside
+
+  - n: 2
+    image: page_02.png
+    setting: bedroom
+    shot: medium
+    angle: side
+    scene:
+      subject: Mum seated on the edge of the bed in left half of frame, seen
+        from the side, upper body only; Orea lying in bed right of her
+      action: Mum's near hand resting on the blanket; Orea lying back on the
+        pillow with the blanket to her chest
+      gaze: Mum looking down at Orea; Orea looking up at Mum
+      expression: Mum gentle and calm; Orea worried, brows slightly raised
+      companion: Whoof-Whoof tucked under Orea's arm on the blanket, head up
+      light: dim cool moonlight from the window behind them, lamp not lit
+      shadow: none prominent
+      room: window with blind and moon upper left, white wardrobe behind,
+        bedhead right, lilac table edge far right
+      state: lamp off, door closed, Mum still in the room
+
+  - n: 3
+    image: page_03.png
+    setting: bedroom
+    shot: detail
+    angle: from_pillow
+    scene:
+      subject: no figure; the corner of the room where two white walls meet
+      action: none
+      gaze: none
+      expression: none
+      companion: not in frame
+      light: cool blue moonlight only, entering from the window at right
+      shadow: a large soft bare-branch tree shadow filling the wall left of
+        the corner, floor to near ceiling, flat and featureless, no face
+      room: brown door far left edge, window with cream blind and full moon
+        right, top edge of the bed and light blue blanket across the bottom
+        of the frame
+      state: lamp off, door closed
+
+  - n: 4
+    image: page_04.png
+    setting: bedroom
+    shot: close
+    angle: three_quarter
+    scene:
+      subject: Orea sitting up in bed, head and shoulders filling the upper
+        left two-thirds of the frame, body turned three-quarters to the right
+      action: right arm stretched out to the right towards the lamp, fingers
+        open and almost touching it; left arm around Whoof-Whoof
+      gaze: fixed on the lamp, away from the viewer
+      expression: frightened but determined, mouth slightly open, brows drawn
+      companion: Whoof-Whoof held against her left side, large in frame, his
+        face turned to the viewer
+      light: no lamp light yet; weak cool light from the left, deep shadow
+        filling the right of the frame
+      shadow: soft dark falloff behind her, no distinct shape
+      room: bedhead behind her, pillow left, lilac bedside table and unlit
+        brass lamp lower right
+      state: lamp off, door closed
+
+  - n: 5
+    image: page_05.png
+    setting: bedroom
+    shot: wide
+    angle: from_doorway
+    scene:
+      subject: Orea sitting up in bed in the right half of frame, small in the
+        room, blanket across her lap
+      action: holding Whoof-Whoof in both hands in front of her
+      gaze: turned up and to the left, towards the wall where the shape was
+      expression: relieved, faintly smiling
+      companion: Whoof-Whoof held in front of her chest, facing the viewer
+      light: lamp on the lilac table lit at right, warm yellow filling the room
+        and washing the walls pale
+      shadow: none; the walls are clear and plain
+      room: brown door closed far left, window with blind and moon centre left,
+        white wardrobe centre right, bed right, lilac table and chair far
+        right, round rug across the floor
+      state: lamp on, door closed
+
+  - n: 6
+    image: page_06.png
+    setting: bedroom
+    shot: wide
+    angle: from_behind
+    scene:
+      subject: Orea standing on the round rug left of centre, full length, seen
+        from behind, only her back and hair visible
+      action: right hand raised to the door handle, pushing the brown door open
+        a little; left hand down at her side holding Whoof-Whoof by one paw
+      gaze: towards the door, away from the viewer
+      expression: not visible
+      companion: Whoof-Whoof hanging from her left hand, feet near the floor
+      light: warm yellow spill entering through the open door from the landing,
+        falling on the floorboards at her feet; lamp also lit at right
+      shadow: none prominent
+      room: brown door open at far left, window with blind and moon centre,
+        white wardrobe right of it, bed right, lilac table and chair far right
+      state: lamp on, door opening
+
+  - n: 7
+    image: page_07.png
+    setting: bedroom
+    shot: medium
+    angle: eye_level
+    scene:
+      subject: Orea standing right of centre on the floorboards, body turned
+        three-quarters towards the lilac table
+      action: right arm extended, hand on the lamp having just switched it off
+      gaze: turned away from the lamp, towards the window
+      expression: calm, faintly smiling, no fear
+      companion: Whoof-Whoof held against her chest in her left arm, his head
+        above her forearm
+      light: lamp just gone out; cool moonlight from the window becoming the
+        only source, dim and even
+      shadow: soft bare-branch tree shape returning on the wall at the far
+        left, faint and pale, about her own height, flat and featureless
+      room: window with cream blind and moon centre left, white wardrobe behind
+        her, bed left, lilac table and chair right, round rug bottom of frame
+      state: lamp off, door closed
+
+  - n: 8
+    image: page_08.png
+    setting: bedroom
+    shot: close
+    angle: high
+    scene:
+      subject: Orea lying on her pillow, head and shoulders filling the centre
+        of the frame, seen slightly from above
+      action: both arms wrapped around Whoof-Whoof, blanket pulled up
+      gaze: eyes closed, asleep
+      expression: peaceful, faintly smiling
+      companion: Whoof-Whoof held against her cheek and chest, very large in
+        frame, red collar and navy bow visible
+      light: cool moonlight from the window above right; a thin warm band of
+        landing light at the far left edge
+      shadow: faint pale tree shape on the wall behind her, soft and
+        featureless
+      room: window with blind and moon upper right, corner of the room upper
+        left, pillow and light blue blanket filling the lower frame
+      state: lamp off, door ajar, asleep
