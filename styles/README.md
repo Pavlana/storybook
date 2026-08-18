@@ -62,10 +62,9 @@ repo produces.
 | pack | look |
 |---|---|
 | `watercolour` | Traditional watercolour, paper grain, ink linework, muted. Soft vignette edges. |
-| `pencil` | Coloured pencil over a light wash. Visible strokes, handmade. Fades to bare paper. |
-| `cartoon` | Bold even outlines, flat bright fills, simple shapes. Hard border. |
-| `anime` | Soft slice-of-life anime, cel shading, painted backgrounds. Hard border. |
-| `gouache` | Opaque matte gouache on toned paper, mid-century palette. Hard border. |
 
-`reference.png` is missing from each until you generate it. `--check` will tell
-you which packs are incomplete.
+One pack for now. Add more when you need them — the machinery already supports
+any number, and `--styles` will list them with their swatch status.
+
+`reference.png` is missing until you generate it. `--styles` shows which packs
+are incomplete.
