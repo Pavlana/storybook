@@ -280,18 +280,28 @@ To write it to a file instead of the screen:
 python3 bin/prompts.py --dir books/orea-02-dentist --charsheet dentist --out out/
 ```
 
-Now paste that prompt into your image AI, and read the `attach:` line at the top
-of it:
+Now paste that prompt into your image AI. There is **always** something to
+attach — read the `attach:` line at the top to see which of the two cases you
+are in:
 
-- **`attach: nothing`** — the character has never been drawn. Run the prompt on
-  its own. The style pack's wording is doing all the work.
-- **`attach: <some image>`** — the character already exists in a picture
-  somewhere, and `cast.yaml` points at it. Attach that image. **Always do this
-  when it is offered.** A likeness reference beats any amount of description;
-  it is the single largest quality difference in the whole pipeline.
+- **`(likeness AND style reference)`** — this character already exists in a
+  picture somewhere, and `cast.yaml` points at it with `reference:`. Attach it.
+  The prompt tells the model to copy that face exactly. A likeness reference
+  beats any amount of description; it is the single largest quality difference
+  in the whole pipeline.
+- **`(style reference only)`** — nobody has drawn this character yet, so the
+  book's style anchor is attached instead. The prompt tells the model to invent
+  the face from your description but take the medium, palette and line quality
+  from the attached image.
 
-Mum is the worked example. She was never given a sheet in book one — she just
-appeared on page two. So her cast entry says:
+That second case matters more than it looks. Without it a new character comes
+out in whatever house style the model defaults to, and then every page they
+appear on is painted differently from the rest of the book. You do **not** fix
+that by inventing a `reference:` for them — `reference:` means *this is the same
+person*, and pointing it at somebody else's picture will give you their face.
+
+Mum is the worked example of the first case. She was never given a sheet in book
+one — she just appeared on page two. So her cast entry says:
 
 ```yaml
 mum:
@@ -301,6 +311,11 @@ mum:
 
 and her prompt tells you to attach that page. The result is the same woman, not
 a woman who resembles her.
+
+The dentist is the worked example of the second. Nobody has ever drawn her, so
+she has no `reference:` line at all, and her prompt attaches Orea's approved
+sheet purely for the paint. Once you have accepted her sheet, that *becomes* her
+likeness for every future book — add `reference:` then, not before.
 
 Save the finished sheet **exactly where the prompt's last line says**, which is
 always `series/orea/charsheet/<the sheet filename from cast.yaml>`. If you save

@@ -330,13 +330,27 @@ def render_one_charsheet(style, world, cid):
     ref = who.get("reference")
     numbered = "\n".join(f"{i}. {who['name']}, {v}."
                           for i, v in enumerate(who.get("sheet_views", []), 1))
-    attach = f"{ref}   (likeness AND style reference)" if ref else "nothing"
-    role = ("One attached image is an existing illustration of this character. "
-            "Copy their face, hair, colouring and clothing from it exactly — "
-            "this is the same person. Match its medium, palette and line "
-            "quality too. Do not copy its background, its composition or any "
-            "other character in it."
-            if ref else style["style_reference"])
+
+    if ref:
+        # An existing picture of this person, painted in this style already:
+        # it answers both questions at once.
+        attach = f"{ref}   (likeness AND style reference)"
+        role = ("One attached image is an existing illustration of this "
+                "character. Copy their face, hair, colouring and clothing from "
+                "it exactly — this is the same person. Match its medium, "
+                "palette and line quality too. Do not copy its background, its "
+                "composition or any other character in it.")
+    else:
+        # Nobody has drawn this character yet. Invent the face, but do not
+        # invent the style: attach whatever the book uses as its look anchor,
+        # or every page this character is on will be painted differently from
+        # the rest of the book.
+        attach = f"{reference_path(style, world)}   (style reference only)"
+        role = (style["style_reference"] + " This character has never been "
+                "drawn. Invent their face and build, guided only by the "
+                "description below — do not copy the face or the clothing of "
+                "anyone in the attached image. Take the medium, the palette "
+                "and the line quality from it, and nothing else.")
 
     return "\n".join([
         "=" * 74,

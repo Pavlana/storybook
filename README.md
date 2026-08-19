@@ -113,11 +113,17 @@ python3 bin/prompts.py --dir books/<book> --charsheet           # all of them
 python3 bin/prompts.py --dir books/<book> --charsheet <id> --out out/
 ```
 
-The argument is the **id** from `cast.yaml`, not the name. If that character has
-a `reference:` — an existing illustration they already appear in — the prompt's
-`attach:` line names it, and you should attach it. A likeness reference beats
-description by a wide margin. Save the result exactly where the prompt's last
-line says.
+The argument is the **id** from `cast.yaml`, not the name. There is always one
+image to attach, and the `attach:` line says which job it is doing:
+
+- a character with `reference:` — an illustration they already appear in —
+  attaches that, as likeness *and* style. Copy the face exactly.
+- a character without one attaches the book's style reference instead. Invent
+  the face from the description; take only the paint.
+
+`reference:` means *this is the same person*. Never point it at somebody else's
+picture to borrow a style — that is what the style reference is for. Save the
+result exactly where the prompt's last line says.
 
 ### Chaining, step 11
 
