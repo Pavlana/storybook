@@ -38,6 +38,26 @@ Three modes, set per page (or globally) via `image_mode`:
 
 import sys
 import os
+
+def _need(module, package):
+    try:
+        return __import__(module)
+    except ModuleNotFoundError:
+        raise SystemExit(
+            f"\nMissing dependency: {package}\n\n"
+            f"Install everything this repo needs:\n\n"
+            f"    python3 -m venv .venv\n"
+            f"    source .venv/bin/activate\n"
+            f"    pip install -r requirements.txt\n\n"
+            f"Then run the command again. On macOS, `pip install` without a\n"
+            f"virtual environment is often blocked by the system Python;\n"
+            f"the venv above avoids that.\n")
+
+
+_need("yaml", "PyYAML")
+_need("reportlab", "reportlab")
+_need("PIL", "pillow")
+
 import yaml
 from reportlab.pdfgen import canvas
 from reportlab.pdfbase import pdfmetrics
@@ -281,13 +301,25 @@ def build(book_dir, lang=None):
 
         c.setFillColor(INK)
         c.setFont(font_alias, body_size)
-        text = " ".join(str(texts[pg["n"]]).split())
-        lines = wrap_measured(text, font_alias, body_size,
-                              W - m_right - (HALF + m_text))
-        y = H / 2 + (len(lines) * leading) / 2 - leading / 2
-        for ln in lines:
-            c.drawString(HALF + m_text, y, ln)
-            y -= leading
+        maxw = W - m_right - (HALF + m_text)
+        para_gap = leading * 0.45
+
+        # Blank lines in the YAML are paragraph breaks — dialogue needs them.
+        paragraphs = [" ".join(blk.split())
+                      for blk in str(texts[pg["n"]]).split("\n\n")
+                      if blk.strip()]
+        blocks = [wrap_measured(pa, font_alias, body_size, maxw)
+                  for pa in paragraphs]
+
+        total = (sum(len(b) for b in blocks) * leading
+                 + max(0, len(blocks) - 1) * para_gap)
+        y = H / 2 + total / 2 - leading / 2
+        for bi, block in enumerate(blocks):
+            for ln in block:
+                c.drawString(HALF + m_text, y, ln)
+                y -= leading
+            if bi < len(blocks) - 1:
+                y -= para_gap
 
         c.setFillColor(FAINT)
         c.setFont(font_alias, body_size - 4.5)

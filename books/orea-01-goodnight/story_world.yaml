@@ -1,39 +1,11 @@
-# STORY WORLD — everything specific to this story. The cast, the places, and the
-# continuity rules that only make sense here.
+# STORY WORLD — Good night, Orea.
 #
-# style.yaml holds craft rules and never mentions any of this by name.
-# Swap this file and the same pipeline tells a different story, anywhere.
+# The cast lives in series/orea/cast.yaml, shared by every book in the series.
+# This file lists only WHICH characters appear, plus the places and the rules
+# that belong to this story alone.
 
-# --- cast ------------------------------------------------------------------
-# `constant: true` means the character must appear in every illustration.
-# Descriptions feed the character-sheet prompt; the sheet then carries the
-# appearance and the prompts stop having to describe it.
-
-cast:
-  - id: orea
-    name: Orea
-    lead: true
-    description: >
-      A girl of four. Blonde wavy shoulder-length hair, rosy cheeks, blue eyes.
-      She wears pale blue button-up pyjamas, long sleeves, long trousers, plain
-      with no pattern. She is barefoot.
-    sheet_views:
-      - standing, full body, facing forward
-      - standing, full body, in profile facing left
-      - head and shoulders, larger, facing forward
-
-  - id: whoof
-    name: Whoof-Whoof
-    constant: true
-    description: >
-      A soft beige stuffed toy dog with very long floppy ears, a small black
-      nose, a red collar, and a small navy blue bow on the top of his head.
-    sheet_views:
-      - sitting on its own, facing forward
-      - lying on its own, on its side
-    rules:
-      - Whoof-Whoof appears in every illustration. He is never lost, never
-        dropped, never swapped for another toy, never damaged.
+series: orea
+cast: [orea, whoof, mum]
 
 # --- settings --------------------------------------------------------------
 # One entry per place the story visits. Each page in pages.yaml names its

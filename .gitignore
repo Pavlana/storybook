@@ -3,3 +3,9 @@ __pycache__/
 .DS_Store
 out/
 *.tmp
+.venv/
+
+# Built books. Derived from art/ + text/ + the yaml, and 36 MB each — git
+# would keep every revision forever. Rebuild with:
+#   python3 bin/build.py --dir books/<book> --all
+books/**/*.pdf

@@ -1,0 +1,61 @@
+# STORY WORLD — Orea and the Dentist
+#
+# The cast lives in series/orea/cast.yaml, shared by every book in the series.
+# This file lists only WHICH characters appear, plus the places and the rules
+# that belong to this story alone.
+
+series: orea
+cast: [orea, whoof, mum, dentist]
+
+# --- settings --------------------------------------------------------------
+
+settings:
+  park:
+    plate: park.png
+    description: >
+      A town park on a bright, cool afternoon: a wide paved path, mown grass,
+      trees in leaf, a green wooden bench beside the path, low black railings,
+      and a gate in the distance.
+    constants:
+      - The path is pale grey paving, the bench green, the railings black.
+    never:
+      - No other children or adults in the background. No dogs, unless the
+        scene names one.
+
+  surgery:
+    plate: surgery.png
+    description: >
+      A small, bright, friendly dentist's room in daylight. Pale walls covered
+      with children's drawings, dozens of them, pinned in a cheerful jumble. One
+      dental chair upholstered in pale blue, with an adjustable lamp on an arm
+      above it. A low tray of clean, simple instruments and a small set of
+      model teeth. A window with a plain blind. A low stool. Warm, uncluttered,
+      not clinical.
+    constants:
+      - The chair is pale blue, the walls pale, the drawings cover the walls,
+        the room is bright and uncluttered.
+    never:
+      - Nothing sharp, medical or frightening in close-up. No needles, no
+        drills, no blood, no gloves in a threatening pose.
+      - No open mouth shown in distress or pain.
+      - No other patients, no waiting room, no reception desk.
+
+# --- continuity ------------------------------------------------------------
+# Rules that belong to this story only.
+
+continuity:
+  tone: >
+    The surgery must always read as a safe, welcoming place. Where a choice
+    exists between showing an instrument and showing a face, show the face.
+  tools: >
+    The three tools are a small round mirror on a handle, a small round brush
+    on a handle, and a thin suction straw. They are drawn simple, blunt and
+    unthreatening, and are only ever shown being demonstrated on the model
+    teeth or held up for Orea to look at.
+
+# --- which image demonstrates the target look ------------------------------
+# Reuses the approved character sheet from book one. A finished sheet in the
+# right style is a stronger reference than the pack's generic swatch.
+# Path from the repo root; delete this line to fall back to the pack swatch.
+
+style_reference_image: series/orea/charsheet/charsheet_orea_dog.png

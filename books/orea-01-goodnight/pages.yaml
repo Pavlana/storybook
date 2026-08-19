@@ -1,7 +1,9 @@
 # STRUCTURE ONLY — no story text lives here. Text is in text/<lang>.yaml,
 # keyed by the same page numbers. Art direction is in style.yaml.
 #
-# setting — which place from world.yaml this page happens in
+# characters — who is in frame on this page, by id from the series cast.
+#              Only their character sheets get attached. `[]` means nobody.
+# setting — which place from story_world.yaml this page happens in
 # shot   — how close: wide | medium | close | detail
 # angle  — where from: eye_level | low | high | from_behind | from_doorway |
 #          from_pillow | side | three_quarter
@@ -16,6 +18,7 @@
 pages:
   - n: 1
     image: page_01.png
+    characters: [orea, whoof]
     setting: bedroom
     shot: wide
     angle: eye_level
@@ -37,6 +40,7 @@ pages:
 
   - n: 2
     image: page_02.png
+    characters: [orea, whoof, mum]
     setting: bedroom
     shot: medium
     angle: side
@@ -56,6 +60,7 @@ pages:
 
   - n: 3
     image: page_03.png
+    characters: []
     setting: bedroom
     shot: detail
     angle: from_pillow
@@ -75,6 +80,7 @@ pages:
 
   - n: 4
     image: page_04.png
+    characters: [orea, whoof]
     setting: bedroom
     shot: close
     angle: three_quarter
@@ -96,6 +102,7 @@ pages:
 
   - n: 5
     image: page_05.png
+    characters: [orea, whoof]
     setting: bedroom
     shot: wide
     angle: from_doorway
@@ -116,6 +123,7 @@ pages:
 
   - n: 6
     image: page_06.png
+    characters: [orea, whoof]
     setting: bedroom
     shot: wide
     angle: from_behind
@@ -136,6 +144,7 @@ pages:
 
   - n: 7
     image: page_07.png
+    characters: [orea, whoof]
     setting: bedroom
     shot: medium
     angle: eye_level
@@ -157,6 +166,7 @@ pages:
 
   - n: 8
     image: page_08.png
+    characters: [orea, whoof]
     setting: bedroom
     shot: close
     angle: high

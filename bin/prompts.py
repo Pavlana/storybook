@@ -19,7 +19,9 @@ Commands:
     5               print page 5 only
     --check         validate only; exit 1 on failure
     --out DIR       write one .md file per page into DIR
-    --charsheet     the character-sheet prompt, built from the cast
+    --charsheet         sheet prompt for the whole cast together
+    --charsheet <id>    sheet prompt for one character, using their own
+                        likeness reference from series/<series>/cast.yaml
     --plate NAME    the setting-plate prompt for one setting
     --styles        list the style packs available in styles/
     --swatch PACK   the neutral style-swatch prompt for a pack
@@ -31,6 +33,24 @@ over it, so `style` and `edges` travel with the chosen medium.
 import sys
 import os
 import textwrap
+
+def _need(module, package):
+    try:
+        return __import__(module)
+    except ModuleNotFoundError:
+        raise SystemExit(
+            f"\nMissing dependency: {package}\n\n"
+            f"Install everything this repo needs:\n\n"
+            f"    python3 -m venv .venv\n"
+            f"    source .venv/bin/activate\n"
+            f"    pip install -r requirements.txt\n\n"
+            f"Then run the command again. On macOS, `pip install` without a\n"
+            f"virtual environment is often blocked by the system Python;\n"
+            f"the venv above avoids that.\n")
+
+
+_need("yaml", "PyYAML")
+
 import yaml
 
 
@@ -57,13 +77,41 @@ def load_pack(name):
     return pack
 
 
+def load_series_cast(world):
+    """Resolve the book's `cast: [ids]` against series/<series>/cast.yaml.
+    One character, one definition, shared by every book in the series."""
+    name = world.get("series")
+    if not name:
+        return world.get("cast", [])          # legacy: cast inline in the book
+    path = os.path.join(REPO, "series", name, "cast.yaml")
+    if not os.path.isfile(path):
+        raise SystemExit(f"series cast not found: {path}")
+    with open(path, encoding="utf-8") as f:
+        book_of_people = yaml.safe_load(f)["cast"]
+    out = []
+    for cid in world.get("cast", []):
+        if cid not in book_of_people:
+            raise SystemExit(
+                f"character '{cid}' not in series/{name}/cast.yaml "
+                f"(have: {', '.join(book_of_people)})")
+        entry = dict(book_of_people[cid])
+        entry["id"] = cid
+        entry["_series"] = name
+        out.append(entry)
+    return out
+
+
 def load(book_dir):
     def y(name):
         with open(os.path.join(book_dir, name), encoding="utf-8") as f:
             return yaml.safe_load(f)
-    pages = y("pages.yaml")["pages"]
+    try:
+        pages = y("pages.yaml")["pages"] or []
+    except FileNotFoundError:
+        pages = []          # --charsheet and --plate run before scenes exist
     style = y("style.yaml")
     world = y("story_world.yaml")
+    world["cast"] = load_series_cast(world)
 
     packname = style.get("pack")
     if packname:
@@ -77,12 +125,12 @@ def load(book_dir):
 
 
 def reference_path(style, world):
-    """Where the style reference lives: the pack's swatch unless the book
-    overrides it with its own file in art/."""
+    """Where the style reference lives, as a path from the repo root: the
+    pack's swatch unless the book overrides it with a file of its own."""
     override = world.get("style_reference_image")
     pack = style.get("_pack")
     if pack and override in (None, "reference.png"):
-        return os.path.join("..", "..", "styles", pack["_name"],
+        return os.path.join("styles", pack["_name"],
                             pack.get("reference", "reference.png"))
     return override or "reference.png"
 
@@ -173,6 +221,16 @@ def validate(pages, style, world):
         if missing:
             warnings.append(f"page {n}: scene missing {', '.join(missing)}")
 
+        ids = pg.get("characters") or [c["id"] for c in world["cast"]]
+        n_sheets = len({c["sheet"] for c in world["cast"]
+                        if c["id"] in ids and c.get("sheet")})
+        if n_sheets + 2 > 4:
+            warnings.append(
+                f"page {n}: {n_sheets + 2} images to attach. More than four "
+                f"references and the model averages faces instead of copying "
+                f"them — add a `characters:` list to this page naming only who "
+                f"is actually in frame.")
+
         banned = ("knows", "remembers", "decides", "tomorrow", "yesterday",
                   "thinks", "wonders")
         for k, v in scene.items():
@@ -198,7 +256,15 @@ def render_page(pg, style, world, prev_n):
     s = style
     sname, setting = setting_for(pg, world)
 
-    attach = ["charsheet.png", setting["plate"]]
+    # Which characters are in this page? Default: everyone in the book.
+    ids = pg.get("characters") or [c["id"] for c in world["cast"]]
+    sheets, seen = [], set()
+    for c in world["cast"]:
+        if c["id"] in ids and c.get("sheet") and c["sheet"] not in seen:
+            seen.add(c["sheet"])
+            sheets.append(f"series/{c['_series']}/charsheet/{c['sheet']}")
+
+    attach = sheets + [setting["plate"]]
     if prev_n is not None:
         attach.append(f"page_{prev_n:02d}.png")
 
@@ -254,6 +320,51 @@ def render_page(pg, style, world, prev_n):
         render_scene(pg["scene"], s),
     ]
     return "\n".join(parts)
+
+
+def render_one_charsheet(style, world, cid):
+    who = next((c for c in world["cast"] if c["id"] == cid), None)
+    if who is None:
+        raise SystemExit(f"'{cid}' is not in this book's cast "
+                         f"(have: {', '.join(c['id'] for c in world['cast'])})")
+    ref = who.get("reference")
+    numbered = "\n".join(f"{i}. {who['name']}, {v}."
+                          for i, v in enumerate(who.get("sheet_views", []), 1))
+    attach = f"{ref}   (likeness AND style reference)" if ref else "nothing"
+    role = ("One attached image is an existing illustration of this character. "
+            "Copy their face, hair, colouring and clothing from it exactly — "
+            "this is the same person. Match its medium, palette and line "
+            "quality too. Do not copy its background, its composition or any "
+            "other character in it."
+            if ref else style["style_reference"])
+
+    return "\n".join([
+        "=" * 74,
+        f"CHARACTER SHEET — {who['name']}"
+        f"   ->  save as series/{who['_series']}/charsheet/"
+        f"{who.get('sheet','sheet.png')}",
+        f"attach: {attach}",
+        "=" * 74,
+        "",
+        f"Draw a CHARACTER REFERENCE SHEET for one character, on a plain white "
+        f"background.",
+        "",
+        "REFERENCE",
+        para(role),
+        "",
+        "Show, side by side, with clear space between them:",
+        "",
+        numbered,
+        "",
+        para(f"{who['name']}: {flat(who['description'])}"),
+        "",
+        "STYLE",
+        para(style["style"]),
+        "",
+        "Plain white background. No scenery, no furniture, no props, no other "
+        "characters. No text, no letters, no numbers, no labels anywhere in "
+        "the image.",
+    ])
 
 
 def render_charsheet(style, world):
@@ -388,13 +499,29 @@ def main():
         d = os.path.abspath(argv[argv.index("--dir") + 1])
     else:
         d = os.getcwd()
-    if not os.path.isfile(os.path.join(d, "pages.yaml")):
-        raise SystemExit(f"no pages.yaml in {d} — pass --dir books/<book>")
+    if not os.path.isfile(os.path.join(d, "style.yaml")):
+        raise SystemExit(f"no style.yaml in {d} — pass --dir books/<book>")
 
     pages, style, world = load(d)
 
-    if "--charsheet" in sys.argv:
-        print(render_charsheet(style, world))
+    def emit(text, default_name):
+        if "--out" in argv:
+            outdir = argv[argv.index("--out") + 1]
+            os.makedirs(outdir, exist_ok=True)
+            path = os.path.join(outdir, default_name)
+            with open(path, "w", encoding="utf-8") as f:
+                f.write(text + "\n")
+            print(f"wrote {path}")
+        else:
+            print(text)
+
+    if "--charsheet" in argv:
+        i = argv.index("--charsheet")
+        who = (argv[i + 1] if len(argv) > i + 1
+               and not argv[i + 1].startswith("-") else None)
+        emit(render_one_charsheet(style, world, who) if who
+             else render_charsheet(style, world),
+             f"charsheet_{who}.md" if who else "charsheet_all.md")
         return
     if "--plate" in sys.argv:
         print(render_plate(sys.argv[sys.argv.index("--plate") + 1], style, world))

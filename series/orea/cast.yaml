@@ -1,0 +1,72 @@
+# SERIES CAST — Orea
+#
+# The single source of truth for who these people are. Every book in the
+# series references this file by id; no book re-describes a character.
+# Add a character here the first time they appear, and every later book gets
+# them for free, looking the same.
+#
+# id       — how books refer to them. Unique, lower case, never reused.
+# name     — exactly as spelled in the text. Never varies.
+# sheet    — the approved character sheet, in series/<series>/charsheet/.
+#            Characters who share a sheet name the same file.
+# reference— an existing illustration to use as the likeness reference when
+#            generating that character's sheet. Path is relative to the repo
+#            root. Leave out if the character has no picture yet.
+
+series: Orea
+
+cast:
+  orea:
+    name: Orea
+    lead: true
+    sheet: charsheet_orea_dog.png
+    reference: series/orea/charsheet/charsheet_orea_dog.png
+    description: >
+      A girl of four. Blonde wavy shoulder-length hair, rosy cheeks, blue eyes.
+      At night she wears pale blue button-up pyjamas, plain, and is barefoot.
+      Out of doors she wears a simple coat and shoes.
+    sheet_views:
+      - standing, full body, facing forward
+      - standing, full body, in profile facing left
+      - head and shoulders, larger, facing forward
+
+  whoof:
+    name: Whoof-Whoof
+    constant: true
+    sheet: charsheet_orea_dog.png
+    reference: series/orea/charsheet/charsheet_orea_dog.png
+    description: >
+      A soft beige stuffed toy dog with very long floppy ears, a small black
+      nose, a red collar, and a small navy blue bow on the top of his head.
+    sheet_views:
+      - sitting on its own, facing forward
+      - lying on its own, on its side
+    rules:
+      - Whoof-Whoof appears in every illustration. He is never lost, never
+        dropped, never swapped for another toy, never damaged.
+
+  mum:
+    name: Mum
+    sheet: charsheet_mum.png
+    reference: books/orea-01-goodnight/art/page_02.png
+    description: >
+      Orea's mother. A woman in her thirties, with shoulder-length wavy
+      chestnut-brown hair, fair skin and blue eyes. Indoors she wears a soft
+      dusty-pink knitted jumper and blue jeans, with plain tan loafers. Calm,
+      warm, unhurried. She is called only Mum and has no other name.
+    sheet_views:
+      - standing, full body, facing forward
+      - seated on the edge of a bed, upper body, in three-quarter view, leaning
+        slightly towards a child
+      - head and shoulders, larger, facing forward, smiling gently
+
+  dentist:
+    name: the dentist
+    sheet: charsheet_dentist.png
+    description: >
+      A woman with shoulder-length dark hair and crinkly, smiling blue eyes,
+      wearing a pale pink tunic and a soft clinical cap. Friendly and a little
+      playful. She never wears a mask over her face in any illustration.
+    sheet_views:
+      - standing, full body, facing forward
+      - head and shoulders, larger, facing forward, smiling

@@ -6,8 +6,9 @@ Generate the cover **last**, once the interior pages exist. It is the one image
 that has to represent the whole book, and you cannot judge that until you have
 seen the book.
 
-Attach: `art/charsheet.png`, the style reference from your pack, and two or
-three finished interior pages you are happy with.
+Attach: the lead character's sheet from `series/<series>/charsheet/`, the style
+reference from your pack, and two or three finished interior pages you are
+happy with.
 
 ---
 
