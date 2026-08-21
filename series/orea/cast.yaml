@@ -9,6 +9,11 @@
 # name     — exactly as spelled in the text. Never varies.
 # sheet    — the approved character sheet, in series/<series>/charsheet/.
 #            Characters who share a sheet name the same file.
+# wardrobe — what they wear, by named outfit. Clothing is a property of the
+#            day, not of the person, so it lives here and not in description.
+#            A book picks one outfit in its story_world.yaml; a setting or a
+#            single page may override it. Add a new outfit here once and every
+#            later book can use it.
 # reference— an existing illustration to use as the likeness reference when
 #            generating that character's sheet. Path is relative to the repo
 #            root. Leave out if the character has no picture yet.
@@ -19,12 +24,27 @@ cast:
   orea:
     name: Orea
     lead: true
-    sheet: charsheet_orea_dog.png
-    reference: series/orea/charsheet/charsheet_orea_dog.png
+    # Orea alone. She and Whoof-Whoof used to share one sheet, which meant any
+    # page without the toy still had a picture of the toy attached to it — and
+    # a reference beats an instruction every time.
+    sheet: charsheet_orea.png
+    reference: series/orea/charsheet/charsheet_orea.png
     description: >
       A girl of four. Blonde wavy shoulder-length hair, rosy cheeks, blue eyes.
-      At night she wears pale blue button-up pyjamas, plain, and is barefoot.
-      Out of doors she wears a simple coat and shoes.
+      Small for her age, sturdy, with a round face.
+    wardrobe:
+      night: >
+        plain pale blue button-up pyjamas, barefoot
+      summer: >
+        a light violet cotton country knee-length dress with short puffed sleeves and a small
+        collar, white ankle socks and brown t-bar shoes
+      autumn: >
+        the beige dress and pink cardigan over it, brown boots
+      winter: >
+        a warm buttoned coat over the dusty mauve-pink dress, a knitted hat,
+        mittens, thick tights and brown boots
+      rain: >
+        a yellow raincoat with the hood down, and green wellington boots
     sheet_views:
       - standing, full body, facing forward
       - standing, full body, in profile facing left
@@ -32,9 +52,15 @@ cast:
 
   whoof:
     name: Whoof-Whoof
-    constant: true
-    sheet: charsheet_orea_dog.png
-    reference: series/orea/charsheet/charsheet_orea_dog.png
+    companion_of: orea
+    # NOT constant. He was, and it forced "appears in every illustration" into
+    # every prompt, which put him in a child's arms while she was cheerfully
+    # asking about ducks. He is not a prop she carries; he is what she reaches
+    # for. Put him in frame at home, at play, and at the moments she has to get
+    # through something — and leave him out of the ordinary ones, so that the
+    # page where she picks him up means something.
+    sheet: charsheet_dog.png
+    reference: series/orea/charsheet/charsheet_dog.png
     description: >
       A soft beige stuffed toy dog with very long floppy ears, a small black
       nose, a red collar, and a small navy blue bow on the top of his head.
@@ -42,18 +68,31 @@ cast:
       - sitting on its own, facing forward
       - lying on its own, on its side
     rules:
-      - Whoof-Whoof appears in every illustration. He is never lost, never
-        dropped, never swapped for another toy, never damaged.
+      - Whoof-Whoof is never lost, never dropped, never swapped for another
+        toy, never damaged.
+      - When he is in frame he is always the same toy, with the red collar and
+        the navy bow.
 
   mum:
     name: Mum
     sheet: charsheet_mum.png
-    reference: books/orea-01-goodnight/art/page_02.png
+    reference: series/orea/charsheet/charsheet_mum.png
     description: >
       Orea's mother. A woman in her thirties, with shoulder-length wavy
-      chestnut-brown hair, fair skin and blue eyes. Indoors she wears a soft
-      dusty-pink knitted jumper and blue jeans, with plain tan loafers. Calm,
-      warm, unhurried. She is called only Mum and has no other name.
+      chestnut-brown hair, fair skin and blue eyes. Calm, warm, unhurried. She
+      is called only Mum and has no other name.
+    wardrobe:
+      night: >
+        a soft dusty-pink knitted jumper and blue jeans, with plain tan loafers
+      summer: >
+        a pale linen shirt with the sleeves turned back, blue jeans and plain
+        tan loafers
+      autumn: >
+        a soft dusty-pink knitted jumper and blue jeans, with plain tan loafers
+      winter: >
+        a long grey wool coat over the dusty-pink jumper, and brown boots
+      rain: >
+        a navy raincoat over the dusty-pink jumper, and brown boots
     sheet_views:
       - standing, full body, facing forward
       - seated on the edge of a bed, upper body, in three-quarter view, leaning
@@ -63,10 +102,20 @@ cast:
   dentist:
     name: the dentist
     sheet: charsheet_dentist.png
+    reference: series/orea/charsheet/charsheet_dentist.png
     description: >
-      A woman with shoulder-length dark hair and crinkly, smiling blue eyes,
-      wearing a pale pink tunic and a soft clinical cap. Friendly and a little
-      playful. She never wears a mask over her face in any illustration.
+      A woman with shoulder-length dark hair and crinkly, smiling blue eyes.
+      Friendly and a little playful. She never wears a mask over her face in
+      any illustration.
+    wardrobe:
+      # She is at work in every book she appears in, so every outfit is the
+      # same one. Named entries still have to exist or the book cannot resolve
+      # hers.
+      night:  &work a pale pink tunic and a soft clinical cap
+      summer: *work
+      autumn: *work
+      winter: *work
+      rain:   *work
     sheet_views:
       - standing, full body, facing forward
       - head and shoulders, larger, facing forward, smiling

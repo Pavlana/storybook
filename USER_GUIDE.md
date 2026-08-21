@@ -280,16 +280,22 @@ To write it to a file instead of the screen:
 python3 bin/prompts.py --dir books/orea-02-dentist --charsheet dentist --out out/
 ```
 
-Now paste that prompt into your image AI. There is **always** something to
-attach — read the `attach:` line at the top to see which of the two cases you
-are in:
+Every prompt this tool prints has two halves, split by a `PASTE FROM HERE` line.
 
-- **`(likeness AND style reference)`** — this character already exists in a
+Above it is a **FOR YOU, NOT FOR THE MODEL** block: which files to drag into the
+chat, and where to save what comes back. Those are paths on your computer and
+they mean nothing to ChatGPT — never paste them in. Below the line is the
+prompt, which refers only to "the attached image".
+
+There is **always** something to drag in. The label after the filename says
+which of the two cases you are in:
+
+- **`(likeness AND style)`** — this character already exists in a
   picture somewhere, and `cast.yaml` points at it with `reference:`. Attach it.
   The prompt tells the model to copy that face exactly. A likeness reference
   beats any amount of description; it is the single largest quality difference
   in the whole pipeline.
-- **`(style reference only)`** — nobody has drawn this character yet, so the
+- **`(style only)`** — nobody has drawn this character yet, so the
   book's style anchor is attached instead. The prompt tells the model to invent
   the face from your description but take the medium, palette and line quality
   from the attached image.

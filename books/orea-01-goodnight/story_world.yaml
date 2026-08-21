@@ -7,6 +7,9 @@
 series: orea
 cast: [orea, whoof, mum]
 
+# Which named outfit from cast.yaml everyone wears in this book.
+wardrobe: night
+
 # --- settings --------------------------------------------------------------
 # One entry per place the story visits. Each page in pages.yaml names its
 # setting; prompts.py attaches that plate and emits that description.

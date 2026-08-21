@@ -3,9 +3,14 @@
 A repeatable pipeline for making illustrated children's books with AI, and a
 layout engine that turns the results into a PDF.
 
-The tools generate **prompts**, not pictures. You run those prompts in whatever
-image model you use, drop the results into `art/`, and build. Nothing here calls
-an API or needs a key.
+The tools generate **prompts**, not pictures. You run those prompts by hand in
+whatever image model you use, drop the results into `art/`, and build. Nothing
+here calls an API or needs a key.
+
+Every prompt is split by a `PASTE FROM HERE` line. Above it, addressed to you:
+which files to drag into the chat window, and where to save the result. Below
+it, addressed to the model, referring only to "the attached image" — the model
+has no filesystem, so no path ever goes into the chat.
 
 ```bash
 git clone <this repo> && cd storybook

@@ -33,7 +33,7 @@ pages:
       light: lamp on the lilac table lit at right, warm yellow, spilling across
         the right wall; cool moonlight through the window behind
       shadow: none prominent
-      room: brown door ajar far left, window with cream blind and moon centre
+      place: brown door ajar far left, window with cream blind and moon centre
         left, white wardrobe right of the window, bed along the right wall,
         lilac table and chair far right, round pale rug under her feet
       state: lamp on, door ajar, night outside
@@ -54,7 +54,7 @@ pages:
       companion: Whoof-Whoof tucked under Orea's arm on the blanket, head up
       light: dim cool moonlight from the window behind them, lamp not lit
       shadow: none prominent
-      room: window with blind and moon upper left, white wardrobe behind,
+      place: window with blind and moon upper left, white wardrobe behind,
         bedhead right, lilac table edge far right
       state: lamp off, door closed, Mum still in the room
 
@@ -73,7 +73,7 @@ pages:
       light: cool blue moonlight only, entering from the window at right
       shadow: a large soft bare-branch tree shadow filling the wall left of
         the corner, floor to near ceiling, flat and featureless, no face
-      room: brown door far left edge, window with cream blind and full moon
+      place: brown door far left edge, window with cream blind and full moon
         right, top edge of the bed and light blue blanket across the bottom
         of the frame
       state: lamp off, door closed
@@ -96,7 +96,7 @@ pages:
       light: no lamp light yet; weak cool light from the left, deep shadow
         filling the right of the frame
       shadow: soft dark falloff behind her, no distinct shape
-      room: bedhead behind her, pillow left, lilac bedside table and unlit
+      place: bedhead behind her, pillow left, lilac bedside table and unlit
         brass lamp lower right
       state: lamp off, door closed
 
@@ -116,7 +116,7 @@ pages:
       light: lamp on the lilac table lit at right, warm yellow filling the room
         and washing the walls pale
       shadow: none; the walls are clear and plain
-      room: brown door closed far left, window with blind and moon centre left,
+      place: brown door closed far left, window with blind and moon centre left,
         white wardrobe centre right, bed right, lilac table and chair far
         right, round rug across the floor
       state: lamp on, door closed
@@ -138,7 +138,7 @@ pages:
       light: warm yellow spill entering through the open door from the landing,
         falling on the floorboards at her feet; lamp also lit at right
       shadow: none prominent
-      room: brown door open at far left, window with blind and moon centre,
+      place: brown door open at far left, window with blind and moon centre,
         white wardrobe right of it, bed right, lilac table and chair far right
       state: lamp on, door opening
 
@@ -160,7 +160,7 @@ pages:
         only source, dim and even
       shadow: soft bare-branch tree shape returning on the wall at the far
         left, faint and pale, about her own height, flat and featureless
-      room: window with cream blind and moon centre left, white wardrobe behind
+      place: window with cream blind and moon centre left, white wardrobe behind
         her, bed left, lilac table and chair right, round rug bottom of frame
       state: lamp off, door closed
 
@@ -182,6 +182,6 @@ pages:
         landing light at the far left edge
       shadow: faint pale tree shape on the wall behind her, soft and
         featureless
-      room: window with blind and moon upper right, corner of the room upper
+      place: window with blind and moon upper right, corner of the room upper
         left, pillow and light blue blanket filling the lower frame
       state: lamp off, door ajar, asleep

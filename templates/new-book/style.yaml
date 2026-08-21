@@ -20,12 +20,13 @@ style: >
   twentieth-century English picture book tradition. Do not imitate or reference
   any specific named book, character, illustrator or franchise.
 
+# The prompt names the actual file before this text, so do not open it with
+# "one attached image is a style reference" — start at what to do with it.
 style_reference: >
-  One attached image is a STYLE REFERENCE. Match its medium, its paper texture,
-  its palette, its line quality and its level of detail as closely as you can —
-  the finished picture should look like it came from the same sketchbook, by the
-  same hand, in the same sitting. Do NOT copy its subject, its poses or its
-  composition; take only the look.
+  Match its medium, its paper texture, its palette, its line quality and its
+  level of detail as closely as you can — the finished picture should look like
+  it came from the same sketchbook, by the same hand, in the same sitting. Do
+  NOT copy its subject, its poses or its composition; take only the look.
 
 edges: >
   Paint the illustration as a watercolour vignette on a white ground — the wash
@@ -36,10 +37,18 @@ aspect: >
   Portrait format, 3:4 proportion. Use the same proportion on every page of
   this book.
 
+# A close-up crops the body — that is what a close-up is. This rule used to
+# demand whole figures on every page, which fought every close and detail shot
+# in the book and quietly widened them.
 composition: >
-  Keep every character whole and inside the frame with a margin — no hand, foot,
-  tail, ear or held object may touch or run off the edge of the picture. Leave
-  breathing space at all four edges. One clear focal point per page.
+  Nothing is cut off by accident. On a WIDE or MEDIUM shot keep every character
+  whole and inside the frame with a margin — no hand, foot, tail, ear or held
+  object touching or running off the edge, and breathing space at all four
+  edges. On a CLOSE-UP or DETAIL shot the crop is deliberate: let the frame cut
+  across the body exactly where the scene says it does, and do not widen the
+  shot to fit more of anyone in. Never slice through a face or an ear, never cut
+  off a hand the page is about, and never leave a limb ending just inside the
+  edge. One clear focal point per page.
 
 # --- what the attached images are for -------------------------------------
 # {characters} and {setting} are filled from world.yaml.
@@ -47,7 +56,8 @@ composition: >
 image_roles:
   characters: >
     The character sheet shows {characters}. Copy their appearance from it
-    exactly — faces, proportions, clothing, colours and markings.
+    exactly — faces, proportions, colouring, build and markings. What they are
+    WEARING is given separately below and overrides the sheet.
   setting: >
     The setting plate shows {setting}. Copy the place, its layout, its contents
     and its colours from it exactly.
@@ -109,5 +119,5 @@ scene_fields:
   - [companion,  COMPANION]
   - [light,      LIGHT]
   - [shadow,     SHADOW]
-  - [room,       SETTING VISIBLE]
+  - [place,      SETTING VISIBLE]
   - [state,      STATE]

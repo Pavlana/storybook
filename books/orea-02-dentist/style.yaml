@@ -20,12 +20,13 @@ style: >
   twentieth-century English picture book tradition. Do not imitate or reference
   any specific named book, character, illustrator or franchise.
 
+# The prompt names the actual file before this text, so do not open it with
+# "one attached image is a style reference" — start at what to do with it.
 style_reference: >
-  One attached image is a STYLE REFERENCE. Match its medium, its paper texture,
-  its palette, its line quality and its level of detail as closely as you can —
-  the finished picture should look like it came from the same sketchbook, by the
-  same hand, in the same sitting. Do NOT copy its subject, its poses or its
-  composition; take only the look.
+  Match its medium, its paper texture, its palette, its line quality and its
+  level of detail as closely as you can — the finished picture should look like
+  it came from the same sketchbook, by the same hand, in the same sitting. Do
+  NOT copy its subject, its poses or its composition; take only the look.
 
 edges: >
   Paint the illustration as a watercolour vignette on a white ground — the wash
