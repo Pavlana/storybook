@@ -1,0 +1,334 @@
+# STRUCTURE ONLY — no story text lives here. Text is in text/<lang>.yaml,
+# keyed by the same page numbers. Art direction is in style.yaml.
+#
+# characters — who is in frame on this page, by id from the series cast.
+#              Everyone here is described and dressed in the prompt.
+# sheets  — optional: which of those need a reference sheet attached. Defaults
+#           to all of `characters`. A person who is only a hand or a pair of
+#           legs at the frame edge has no face to keep consistent, so leaving
+#           them out here buys back an attachment slot.
+#              `[]` means nobody is in frame.
+# setting — which place from story_world.yaml this page happens in
+# shot   — how close: wide | medium | close | detail
+# angle  — where from: eye_level | low | high | from_behind | from_doorway |
+#          from_pillow | side | three_quarter
+#
+# RULE: a shot may repeat on consecutive pages, but not from the same angle.
+#
+# scene  — a DESCRIPTION of the picture, never the story. Every field must be
+#          something a painter could see. No thoughts, no memory, no future
+#          tense, no characters who are not in the frame.
+#          Characters other than Orea go inside subject/action/gaze/expression,
+#          separated by semicolons — there is no field of their own.
+
+pages:
+  - n: 1
+    image: page_01.png
+    characters: [orea, mum]
+    setting: park
+    shot: wide
+    angle: eye_level
+    scene:
+      subject: Orea and Mum walking together toward the viewer, both whole and
+        full length, both faces visible and turned toward each other; Orea in
+        the right half, small; Mum in the left half, taller; the gap between
+        them narrow.
+      action: Orea walking with her face tipped up toward Mum, one arm swinging
+        free at her side, the other hand held in Mum's; Mum looking down at
+        Orea, her head inclined toward her; both mid-stride, coming down the
+        path toward the front of the picture
+      gaze: Orea's eyes up at Mum's face; Mum's eyes down at Orea's face; the
+        two lines of sight meeting between them
+      expression: Orea's mouth open mid-question, eyebrows lifted, cheeks
+        round; Mum's mouth curved in a small listening smile, eyes soft
+      light: bright afternoon sun from high and slightly behind them, warm and
+        pale, the whole scene high-key, their faces in gentle open shade
+      shadow: two soft shadows cast forward from their feet toward the viewer
+        along the paving
+      place: pale paving path running from behind them toward the front of the
+        picture, mown grass either side, low black railings, broad pale trees
+        kept soft, the gate small and distant behind their shoulders
+      state: daylight, dry ground, no bench in frame, no toy in frame
+
+  - n: 2
+    image: page_02.png
+    characters: [orea]
+    sheets: [orea]
+    setting: park
+    shot: close
+    angle: low
+    scene:
+      subject: Orea's head and shoulders large in the lower left of the frame,
+        her body turned slightly away and her chin lifted; the upper right of
+        the frame given over to a soft-edged watercolour thought cloud rising
+        from beside her head, drawn as three small round puffs leading up into
+        one larger soft shape
+      action: one hand come up to hold the small white collar of her dress,
+        fingers curled; her shoulders slightly raised; she is not walking
+      gaze: her eyes turned up and away to her right, focused on nothing in the
+        park
+      expression: brows drawn a little together, lips pressed thin, the corners
+        of her mouth turned down, a small vertical crease between the brows
+      light: bright afternoon daylight from the left, warm on her cheek and in
+        her hair; inside the thought cloud, plain even light with no shadows
+        and nothing dramatic
+      shadow: a soft shadow under her chin and along her jaw; nothing inside
+        the thought cloud casts a shadow
+      place: the park behind her reduced to pale soft washes, a suggestion of
+        grass and trees only, nothing resolved; inside the thought cloud, one
+        thing only — a woman doctor standing simply, facing the viewer, whole
+        and full length, in a plain pale uniform tunic, hands relaxed at her
+        sides, her face calm and pleasant and quite ordinary. No room around
+        her, no chair, no lamp, no equipment, no furniture, nothing else at all
+      state: daylight, Orea alone in the picture, no toy in frame, no other
+        real person in frame; the thought cloud is painted in the same soft
+        watercolour and the same gentle colours as the rest of the picture,
+        only a little cooler — it is never grey, never dark, never a
+        silhouette, and the figure in it is never turned away
+
+  - n: 3
+    image: page_03.png
+    characters: [orea, mum]
+    setting: park
+    shot: medium
+    angle: three_quarter
+    scene:
+      subject: Orea and Mum face to face at the same height, both whole from
+        head to foot with clear space around them and the path visible under
+        them; Orea standing at the right, small, turned three-quarters toward
+        the viewer; Mum at the left, crouched right down on her heels so that
+        her eyes are level with Orea's, her knees folded under her, also
+        three-quarters to the viewer; both faces clearly visible
+      action: Mum's near hand resting on Orea's shoulder, fingers spread
+        gently, her other hand steadying herself on her own knee; Orea's own
+        two hands held together low in front of her, one thumb turning against
+        the other
+      gaze: Orea's eyes on Mum's face; Mum's eyes on Orea's face; the two
+        looking directly at each other, level, with nothing between them
+      expression: Mum smiling warmly, eyes soft and crinkled at the outer
+        corners, head tilted very slightly; Orea not crying and not
+        distressed, but subdued — mouth small and closed, lower lip a little
+        forward, eyebrows raised in the middle, eyes wide and steady on Mum
+      light: bright afternoon daylight from the left, broken into soft dapples
+        by leaves overhead, warm on the sides of both faces
+      shadow: soft dapples across their shoulders and across the paving around
+        them
+      place: the pale paving path underfoot, the green bench whole and
+        uncropped a little behind them at the right, mown grass and low black
+        railings beyond, soft pale trees above
+      state: daylight, nobody seated on the bench, both stopped still on the
+        path, no toy anywhere in frame
+
+  - n: 4
+    image: page_04.png
+    characters: [orea, mum]
+    setting: park
+    shot: close
+    angle: eye_level
+    scene:
+      subject: Mum and Orea sitting side by side on the green bench and turned
+        toward each other, seen from the front and near; Mum on the left, Orea
+        on the right beside her, her head reaching only to Mum's shoulder. Both
+        heads and chests fill most of the frame, cropped straight across at
+        about their waists — no laps, no legs, no feet, no whole bodies. Behind
+        their shoulders, the horizontal slats of the bench back run across the
+        frame, clearly above and behind where they are sitting, so that they
+        are plainly seated on the bench and not leaning over it
+      action: two hands only in the picture — Mum's near hand and Orea's near
+        hand, joined at the bottom edge of the frame, Mum's larger hand closed
+        gently over Orea's smaller one. Mum's far arm is out of frame
+        altogether. Orea sits still, shoulders down and no longer raised
+      gaze: Orea's eyes up and sideways at Mum's face; Mum's eyes down at
+        Orea's face
+      expression: Mum talking, mouth open mid-sentence, eyebrows raised, warm
+        and unhurried; Orea listening, mouth closed and soft, eyebrows level,
+        the worry gone out of her forehead
+      light: bright afternoon daylight from the left, dappled through leaves
+        above, warm across the bench and both faces
+      shadow: soft leaf dapples across the bench slats and across their
+        shoulders
+      place: the green bench back behind them across the frame, mown grass and
+        low black railings soft beyond, pale trees above
+      state: daylight, both seated on the bench, hands joined, no toy anywhere
+        in frame, no thought cloud in frame
+
+  - n: 5
+    image: page_05.png
+    characters: [orea, whoof]
+    setting: surgery
+    shot: medium
+    angle: from_doorway
+    scene:
+      subject: Orea standing just inside the open door, centred, full length
+        but small, the pale door frame cropping the picture at left and
+        right
+      action: both arms wrapped around Whoof-Whoof, holding him high against
+        her chest just under her chin; feet together, quite still
+      gaze: forward into the room and slightly upward
+      expression: eyes wide and round, mouth closed, chin tucked down a little
+      companion: Whoof-Whoof held high against her chest facing forward, ears
+        hanging over her arms, navy bow level with her chin
+      light: bright daylight from a window ahead of her, falling full on her
+        face and the front of her dress
+      shadow: her own shadow falling back toward the viewer across the pale
+        floor
+      place: pale door frame cropping both sides, a strip of pale floor and pale
+        wall beyond her; the rest of the room left almost unpainted
+      state: daylight, door standing open, Orea one step inside
+
+  - n: 6
+    image: page_06.png
+    characters: [orea, whoof, dentist]
+    setting: surgery
+    shot: wide
+    angle: eye_level
+    scene:
+      subject: Orea small at the lower left, full length, three-quarters away
+        from the viewer, facing into the room; the dentist crouched down on one
+        knee at the right, brought down to Orea's height
+      action: Orea holding Whoof-Whoof out at arm's length toward the dentist;
+        the dentist's hand extended toward the toy, not toward Orea
+      gaze: Orea looking up at the dentist's face; the dentist looking at
+        Whoof-Whoof
+      expression: Orea's mouth slightly open, brows raised; the dentist smiling
+        broadly, eyes crinkled at the corners
+      companion: Whoof-Whoof held out at arm's length in Orea's two hands,
+        turned to face the dentist, ears swinging forward
+      light: broad daylight from the window at the left, filling the whole room
+        evenly, nothing harsh
+      shadow: soft short shadows beneath both figures on the pale floor
+      place: the pale blue dental chair whole and uncropped at the centre right,
+        the pale wall behind it carrying three or four children's drawings as
+        simple pale shapes, window with a plain blind at the left, low stool
+        near the chair
+      state: daylight, door behind Orea open, nobody in the chair
+
+  - n: 7
+    image: page_07.png
+    characters: [orea, whoof, mum]
+    setting: surgery
+    shot: medium
+    angle: low
+    scene:
+      subject: Orea up in the raised dental chair, seen from below and slightly
+        to the side so that she is high in the frame against the pale ceiling;
+        Mum standing at the left edge, head and shoulders only, lower in the
+        frame than Orea
+      action: Orea gripping both arms of the chair, elbows locked, shoulders
+        up; Mum's head tipped back, one hand at her own mouth
+      gaze: Orea looking straight ahead and down toward Mum; Mum looking up at
+        Orea
+      expression: Orea's eyes wide, mouth open in a broad startled grin, cheeks
+        high; Mum laughing, eyes closed
+      companion: Whoof-Whoof wedged upright between Orea's back and the chair
+        cushion, both ears sticking out sideways
+      light: broad daylight from the left, the pale ceiling bright above her
+      shadow: the chair's own shadow spread wide and pale across the floor
+        below, seen at a steep angle
+      place: the pale blue chair filling the lower centre of the frame, seen
+        from underneath, pale ceiling and the top of the pale wall above
+      state: daylight, chair raised high, lamp not yet lit
+
+  - n: 8
+    image: page_08.png
+    characters: [orea, whoof, dentist]
+    sheets: [whoof]
+    setting: surgery
+    shot: detail
+    angle: three_quarter
+    scene:
+      subject: no faces in frame; the low tray at close range, with the
+        dentist's hand at the left and Orea's smaller hand at the right
+      action: the dentist's hand holding a thin plain straw above Orea's
+        outstretched index finger; a single bead of water on Orea's fingertip;
+        a small round mirror on a handle and a small round brush on a handle
+        lying on the tray
+      gaze: not in frame
+      expression: not in frame
+      companion: one of Whoof-Whoof's long ears and the edge of his red collar
+        entering the frame at the lower right, resting on the tray edge
+      light: broad daylight from the left, a small bright highlight on the
+        water bead
+      shadow: soft small shadows of the three tools laid across the pale tray
+      place: pale tray surface filling most of the frame, a small set of white
+        model teeth at the back edge, a corner of the pale blue chair behind
+      state: daylight, tools laid out, nothing near anybody's mouth
+
+  - n: 9
+    image: page_09.png
+    characters: [orea, whoof, dentist]
+    setting: surgery
+    shot: close
+    angle: side
+    scene:
+      subject: Whoof-Whoof propped sitting upright on the pale blue chair
+        seat, centre frame, seen from the side; the dentist's face and
+        shoulders leaning in from the left; Orea's head and shoulders from the
+        right, chin near the chair arm
+      action: the dentist holding the small round mirror close to Whoof-Whoof's
+        muzzle; Orea's two hands gripping the edge of the chair seat
+      gaze: the dentist looking closely at Whoof-Whoof; Orea looking at the
+        mirror
+      expression: the dentist's brows drawn together in exaggerated
+        concentration, mouth serious; Orea's mouth open, one cheek lifted
+      companion: Whoof-Whoof sitting upright and central on the chair seat,
+        long ears spread either side of him, red collar and navy bow forward
+      light: broad daylight from the left across all three
+      shadow: a soft shadow of the toy on the pale blue seat beneath him
+      place: the pale blue chair seat and one arm filling the lower frame, the
+        pale wall and its few drawings soft behind
+      state: daylight, lamp not yet lit, Orea still standing beside the chair
+
+  - n: 10
+    image: page_10.png
+    characters: [orea, whoof, mum]
+    sheets: [orea, whoof]
+    setting: surgery
+    shot: wide
+    angle: three_quarter
+    scene:
+      subject: Orea small and alone in the middle of the big pale blue chair,
+        full length, lying back, seen from her right at three-quarters; a
+        woman's hand and forearm entering the frame at the left edge, resting
+        on the chair arm
+      action: Orea's chest lifted mid-breath, one hand flat on the chair arm,
+        her mouth opening wide; the woman's hand resting against Orea's near
+        hand
+      gaze: straight up toward the lamp above her
+      expression: eyes open wide, mouth stretched open as far as it will go,
+        eyebrows raised high
+      companion: Whoof-Whoof tucked in tight against Orea's right side under
+        her arm, head up, ears along her ribs
+      light: the adjustable lamp above the chair newly lit, warm yellow, thrown
+        down across Orea's face and chest; pale daylight from the window behind
+      shadow: a warm pool of lamplight on Orea with soft shadow spreading out
+        across the chair around her
+      place: the whole pale blue chair uncropped, the pale wall and its few
+        drawings behind, the lamp on its arm above the frame's upper right
+      state: daylight outside, lamp on, Orea alone in the chair
+
+  - n: 11
+    image: page_11.png
+    characters: [orea, whoof, mum]
+    sheets: [orea, whoof]
+    setting: park
+    shot: medium
+    angle: from_behind
+    scene:
+      subject: Orea and Mum from behind, walking away down the pale path, Orea
+        at the left three-quarter length, Mum at the right seen from the waist
+        down; Orea's head turned up and to her right toward Mum
+      action: Orea holding Whoof-Whoof up beside her own face and talking to
+        him; her other hand swinging free; both mid-stride
+      gaze: not visible; her head is turned up and away from the viewer
+      expression: not visible from behind; one round cheek showing past her
+        hair
+      companion: Whoof-Whoof held up level with Orea's own face, turned toward
+        her, ears swinging, red collar and navy bow visible
+      light: late afternoon sun low ahead of them, warm, throwing both figures
+        into soft backlight
+      shadow: two long shadows stretching back toward the viewer down the path
+      place: pale paving path leading away toward the open gate, mown grass and
+        low black railings either side, soft pale trees, the green bench whole
+        and uncropped at the right
+      state: daylight fading warm, walking home, gate ahead

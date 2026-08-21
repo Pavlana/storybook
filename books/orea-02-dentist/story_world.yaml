@@ -7,55 +7,89 @@
 series: orea
 cast: [orea, whoof, mum, dentist]
 
+# Which named outfit from cast.yaml everyone wears in this book. A setting may
+# override it (`wardrobe:` inside the setting), and so may a single page.
+wardrobe: summer
+
 # --- settings --------------------------------------------------------------
 
 settings:
   park:
+    # Six nouns of equal weight get six carefully rendered objects and a plate
+    # too busy to stand a child on. Name the one thing that must be resolved,
+    # then say what the rest is. Keep this list short on purpose.
     plate: park.png
     description: >
-      A town park on a bright, cool afternoon: a wide paved path, mown grass,
-      trees in leaf, a green wooden bench beside the path, low black railings,
-      and a gate in the distance.
+      A town park on a bright, cool afternoon. A wide pale paving path curves
+      from the front of the picture towards a gate in the distance. Beside the
+      path, near the front, one green wooden bench — this is the one object
+      painted in full detail. Everything else is simply mown grass, low black
+      railings and trees in leaf, kept broad and pale. Open sky above.
     constants:
       - The path is pale grey paving, the bench green, the railings black.
+    # plate_constants apply only when painting the empty place. They never
+    # reach a page — page 1 has no bench in frame and must not be told about
+    # one.
+    plate_constants:
+      - The bench sits whole inside the frame, never cropped by an edge, with
+        clear space beside it. A page needs two figures seated on it.
     never:
       - No other children or adults in the background. No dogs, unless the
         scene names one.
 
   surgery:
+    # Same rule as the park: name the ONE object painted in full, then say
+    # what the rest is. "Dozens of drawings in a cheerful jumble" produced a
+    # wall of individually rendered pictures — and children's drawings carry
+    # letters, which fights the no-text rule. Three or four, kept as pale
+    # shapes, read as "a friendly room" just as well.
     plate: surgery.png
     description: >
-      A small, bright, friendly dentist's room in daylight. Pale walls covered
-      with children's drawings, dozens of them, pinned in a cheerful jumble. One
-      dental chair upholstered in pale blue, with an adjustable lamp on an arm
-      above it. A low tray of clean, simple instruments and a small set of
-      model teeth. A window with a plain blind. A low stool. Warm, uncluttered,
-      not clinical.
+      A small, bright, friendly dentist's room in daylight. One dental chair
+      upholstered in pale blue stands a little off centre — this is the one
+      object painted in full detail, whole and unobstructed, with clear floor
+      around it. Everything else is kept broad and pale: a plain wall behind
+      it with three or four children's drawings pinned up as simple pale
+      shapes, a window with a plain blind, a low stool, and a low side table.
+      Warm, uncluttered, unhurried. Nothing that looks like a hospital.
     constants:
-      - The chair is pale blue, the walls pale, the drawings cover the walls,
-        the room is bright and uncluttered.
+      - The chair is pale blue, the walls pale, the room bright and
+        uncluttered.
+    plate_constants:
+      - The chair sits whole inside the frame, never cropped by an edge. A
+        child has to be painted sitting in it.
     never:
       - Nothing sharp, medical or frightening in close-up. No needles, no
         drills, no blood, no gloves in a threatening pose.
       - No open mouth shown in distress or pain.
       - No other patients, no waiting room, no reception desk.
+    continuity:
+      tone: >
+        The surgery must always read as a safe, welcoming place. Where a
+        choice exists between showing an instrument and showing a face, show
+        the face.
+      tools: >
+        The three tools are a small round mirror on a handle, a small round
+        brush on a handle, and a thin suction straw. They are drawn simple,
+        blunt and unthreatening, and are only ever shown being demonstrated on
+        the model teeth or held up for Orea to look at.
 
 # --- continuity ------------------------------------------------------------
-# Rules that belong to this story only.
+# Top-level continuity reaches EVERY page. Anything true of one place only
+# belongs under that setting's own `continuity:` block instead — a note about
+# the dentist's room on a page set in the park is noise the model will try to
+# obey.
 
-continuity:
-  tone: >
-    The surgery must always read as a safe, welcoming place. Where a choice
-    exists between showing an instrument and showing a face, show the face.
-  tools: >
-    The three tools are a small round mirror on a handle, a small round brush
-    on a handle, and a thin suction straw. They are drawn simple, blunt and
-    unthreatening, and are only ever shown being demonstrated on the model
-    teeth or held up for Orea to look at.
+continuity: {}
 
 # --- which image demonstrates the target look ------------------------------
-# Reuses the approved character sheet from book one. A finished sheet in the
-# right style is a stronger reference than the pack's generic swatch.
-# Path from the repo root; delete this line to fall back to the pack swatch.
-
-style_reference_image: series/orea/charsheet/charsheet_orea_dog.png
+# No override: this book uses the pack swatch, styles/watercolour/reference.png.
+#
+# It used to point at book one's character sheet, on the reasoning that a
+# finished sheet beats a generic swatch. That stopped being true once the
+# swatch was rebuilt with a landscape half and a restraint pass — the sheet
+# measures twice the saturation of the swatch and of the park plate, so
+# anchoring on it would have pulled every new drawing back toward book one's
+# stronger palette.
+#
+# Set `style_reference_image: <path from repo root>` to override again.
