@@ -178,56 +178,74 @@ pages:
 
   - n: 6
     image: page_06.png
-    characters: [orea, whoof, dentist]
+    characters: [dentist]
     setting: surgery
-    shot: wide
+    shot: close
     angle: eye_level
     scene:
-      subject: Orea small at the lower left, full length, three-quarters away
-        from the viewer, facing into the room; the dentist crouched down on one
-        knee at the right, brought down to Orea's height
-      action: Orea holding Whoof-Whoof out at arm's length toward the dentist;
-        the dentist's hand extended toward the toy, not toward Orea
-      gaze: Orea looking up at the dentist's face; the dentist looking at
-        Whoof-Whoof
-      expression: Orea's mouth slightly open, brows raised; the dentist smiling
-        broadly, eyes crinkled at the corners
-      companion: Whoof-Whoof held out at arm's length in Orea's two hands,
-        turned to face the dentist, ears swinging forward
-      light: broad daylight from the window at the left, filling the whole room
-        evenly, nothing harsh
-      shadow: soft short shadows beneath both figures on the pale floor
-      place: the pale blue dental chair whole and uncropped at the centre right,
-        the pale wall behind it carrying three or four children's drawings as
-        simple pale shapes, window with a plain blind at the left, low stool
-        near the chair
-      state: daylight, door behind Orea open, nobody in the chair
+      subject: the dentist alone, head and shoulders, filling the left and
+        centre of the frame, turned three-quarters toward the viewer and
+        leaning very slightly forward. Nobody else is in the picture. The
+        picture is cropped at about her waist — no full figure, no legs
+      action: her near arm reaching out and down to her right, hand open and
+        palm up, presenting the chair beside her; her other hand resting on the
+        top of the chair's headrest
+      gaze: directly out at the viewer, warm and level
+      expression: smiling broadly with her mouth closed, eyes crinkled deeply
+        at the outer corners, eyebrows raised, head tilted a little
+      light: broad daylight from the left filling the whole room evenly,
+        nothing harsh, no lamp lit
+      shadow: soft and shallow, a faint shadow of her arm across the chair back
+      place: the top of the pale blue chair — its headrest and the upper part
+        of its back only — at the right of the frame beside her; behind them
+        both, a pale wall carrying two children's paintings pinned up as simple
+        pale shapes with no writing on them. Nothing else at all — no tray, no
+        tools, no lamp, no window, no other furniture
+      state: daylight, the chair empty, no child and no toy anywhere in the
+        picture
 
   - n: 7
     image: page_07.png
     characters: [orea, whoof, mum]
     setting: surgery
-    shot: medium
-    angle: low
+    shot: wide
+    angle: eye_level
     scene:
-      subject: Orea up in the raised dental chair, seen from below and slightly
-        to the side so that she is high in the frame against the pale ceiling;
-        Mum standing at the left edge, head and shoulders only, lower in the
-        frame than Orea
-      action: Orea gripping both arms of the chair, elbows locked, shoulders
-        up; Mum's head tipped back, one hand at her own mouth
-      gaze: Orea looking straight ahead and down toward Mum; Mum looking up at
-        Orea
-      expression: Orea's eyes wide, mouth open in a broad startled grin, cheeks
-        high; Mum laughing, eyes closed
-      companion: Whoof-Whoof wedged upright between Orea's back and the chair
-        cushion, both ears sticking out sideways
-      light: broad daylight from the left, the pale ceiling bright above her
-      shadow: the chair's own shadow spread wide and pale across the floor
-        below, seen at a steep angle
-      place: the pale blue chair filling the lower centre of the frame, seen
-        from underneath, pale ceiling and the top of the pale wall above
-      state: daylight, chair raised high, lamp not yet lit
+      subject: the whole room, with the pale blue dental chair standing on the
+        LEFT of the frame exactly as it stands in the previous page — same
+        chair, same headrest, same pale blue — lifted only a little way up on
+        its post. The seat sits at about the height of Mum's hip, its post
+        short and stocky, nowhere near the ceiling. Orea sits up on it, small
+        and whole and full length, her legs hanging over the front edge and
+        not reaching the floor; her head comes to about Mum's shoulder, so she
+        is still clearly below Mum's eye line. The chair has ONE arm rest, on
+        its far side; the near side is open with no arm rest at all. Mum
+        stands on the RIGHT of the frame, whole and full length, well clear of
+        the chair, taller than the seated child. Nobody else is in the picture
+      action: Orea gripping the front edge of the seat with both hands, elbows
+        locked and shoulders up around her ears; Mum with one hand come up to
+        her own mouth, the other arm loose at her side
+      gaze: Orea looking up and across at Mum; Mum looking DOWN and across at
+        Orea, her chin lowered; their eyes meeting across the room
+      expression: Orea's eyes wide and her mouth open in a big startled grin,
+        cheeks high, eyebrows right up; Mum laughing, head tipped forward and
+        down, eyes creased almost closed, mouth open
+      companion: Whoof-Whoof sitting upright directly on the seat cushion
+        beside Orea on the open near side, nothing propping him, both long
+        ears hanging down, red collar and navy bow visible
+      light: broad daylight from the window filling the room evenly, pale and
+        warm, nothing harsh
+      shadow: the chair's own soft shadow spreading across the pale floor
+        beneath it; a soft shadow under Mum's feet
+      place: the pale wall running across the back of the room; the two
+        children's paintings hang on that wall on the LEFT, above and behind
+        the chair, in the same place they were on the previous page, now
+        smaller because the view is wider. A window with a plain blind on the
+        far right wall, a low stool near the foot of the chair, pale floor
+        below. Everything except the chair and the two figures kept broad and
+        pale
+      state: daylight, the chair lifted only slightly, the lamp not lit, no
+        tools in frame
 
   - n: 8
     image: page_08.png
@@ -258,26 +276,37 @@ pages:
     image: page_09.png
     characters: [orea, whoof, dentist]
     setting: surgery
-    shot: close
-    angle: side
+    shot: wide
+    angle: eye_level
     scene:
-      subject: Whoof-Whoof propped sitting upright on the pale blue chair
-        seat, centre frame, seen from the side; the dentist's face and
-        shoulders leaning in from the left; Orea's head and shoulders from the
-        right, chin near the chair arm
-      action: the dentist holding the small round mirror close to Whoof-Whoof's
-        muzzle; Orea's two hands gripping the edge of the chair seat
-      gaze: the dentist looking closely at Whoof-Whoof; Orea looking at the
-        mirror
+      subject: the whole room, taken in at once. The pale blue chair stands on
+        the LEFT of the frame, whole and uncropped, lowered back down, with
+        Whoof-Whoof propped sitting upright and alone in the middle of its
+        seat. The dentist stands just to the right of the chair, turned toward
+        it, whole and full length. Orea stands to the right of her, small,
+        whole and full length, both feet on the floor, facing the chair
+      action: the dentist bending slightly at the waist toward Whoof-Whoof,
+        holding a small round mirror on a slim handle near his muzzle; Orea
+        standing on tiptoe with both hands gripping the arm of the chair,
+        leaning in to watch
+      gaze: the dentist looking closely at Whoof-Whoof; Orea also looking at
+        Whoof-Whoof
       expression: the dentist's brows drawn together in exaggerated
-        concentration, mouth serious; Orea's mouth open, one cheek lifted
-      companion: Whoof-Whoof sitting upright and central on the chair seat,
-        long ears spread either side of him, red collar and navy bow forward
-      light: broad daylight from the left across all three
-      shadow: a soft shadow of the toy on the pale blue seat beneath him
-      place: the pale blue chair seat and one arm filling the lower frame, the
-        pale wall and its few drawings soft behind
-      state: daylight, lamp not yet lit, Orea still standing beside the chair
+        concentration, mouth serious and pressed; Orea's mouth open, both
+        cheeks lifted, eyebrows high
+      companion: Whoof-Whoof sitting upright and central on the pale blue chair
+        seat, facing the viewer, long ears spread either side of him, red
+        collar and navy bow visible, quite alone on the big chair
+      light: broad daylight from the left filling the room evenly, nothing
+        harsh, no lamp lit
+      shadow: a soft small shadow of the toy on the pale blue seat, and shallow
+        shadows under both figures on the pale floor
+      place: the pale blue chair whole on the left, the pale picture wall
+        behind and above it with two or three children's paintings as simple
+        pale shapes, a low stool near the chair, pale floor across the bottom
+        of the frame. Nothing sharp or medical in view
+      state: daylight, lamp not lit, Orea still standing beside the chair and
+        not yet in it
 
   - n: 10
     image: page_10.png

@@ -55,6 +55,13 @@ settings:
     constants:
       - The chair is pale blue, the walls pale, the room bright and
         uncluttered.
+      # Fixed by the approved page 6. Without this the room mirrors itself
+      # from page to page and the reader loses the geography.
+      - The chair stands on the LEFT side of the room as the reader looks at
+        it, with the picture wall behind it. Whenever the chair is in frame it
+        is on the left, never on the right, and the room is never mirrored.
+      - The children's paintings hang on the pale wall behind and above the
+        chair, two or three of them, as simple pale shapes with no writing.
     plate_constants:
       - The chair sits whole inside the frame, never cropped by an edge. A
         child has to be painted sitting in it.
